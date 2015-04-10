@@ -8,7 +8,7 @@
 
 <body id="<?php echo $pageID; ?>">
     
-    <div class="row clearfix">
+    <div class="row">
         <!-- half column with heading and message -->
         <div class="column one-half">
         <h3>Column Heading</h3>

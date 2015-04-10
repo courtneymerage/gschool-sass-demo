@@ -1,5 +1,7 @@
 @import "variables";
 
+@import "mixins";
+
 @import "grid";
 
 
@@ -29,12 +31,11 @@ body {
 }
 
 a {
-    transition: 333ms all ease-in-out;
+    @include ease;
     color:darkslategrey;
-}
-
-a:hover {
+    &:hover {
     color: #FB8B6F;
+}
 }
 
 /*Header*/
@@ -48,10 +49,13 @@ header {
     body#home & {
         margin-bottom: 0;
     }
-    
     nav {
         float: right;
         text-align: right;
+    }
+}
+ nav {
+    margin-top: 21px;
         a {
             margin-right: 20px;
             font-size: 20px;
@@ -67,6 +71,12 @@ header {
                     
         }
     }
+    @include breakpoint($tablet) {
+        text-align: center;
+        nav {
+            float: none;
+            text-align: center;
+    }
 }
 
 
@@ -74,10 +84,11 @@ header {
 .logo {
     float: left;
     width: 65px;
-}
-
-nav {
-    margin-top: 21px;
+    
+    @include breakpoint ($tablet) {
+        float: none;
+        width: 80px;
+    }
 }
 
 
@@ -87,9 +98,18 @@ footer {
 background: $darkgreen;
 margin-top: 60px;
 padding: 5px 0;
-font-size: 11px;
+font-size: 20px;
 text-align: center;
+nav {
+    text-align: center;
+    a {
+        font-size: 20px;
+        color: #444;
+        text-decoration: none;
+    }
 }
+}
+    
 
 /*Hero*/
 .hero {
@@ -110,20 +130,10 @@ text-align: center;
 
 /*Responsive*/
 @media (max-width: 500px) {
-    header {
-        text-align: center;
-    }
-    
-    .logo {
+     .logo {
         float: none;
         width: 80px;
     }
-    
-    header nav {
-        float: none;
-        text-align: center;
-    }
-    
     .column {
         width: 100% !important;
         margin-right: 0;

@@ -2,20 +2,30 @@
 .row {
   width: 90%;
   max-width: 800px;
-  margin: 0 auto 20px; }
+  margin: 0 auto 20px;
+  *zoom: 1; }
+  .row:before, .row:after {
+    content: " ";
+    display: table; }
+  .row:after {
+    clear: both; }
+  @media (max-width: 1600px) {
+    .row {
+      max-width: 1500px; } }
 
 .column {
   float: left;
   margin-right: 2%; }
-
-.column.two-third {
-  width: 65%; }
-
-.column.one-half {
-  width: 49%; }
-
-.column:last-of-type {
-  margin-right: 0; }
+  .column.two-third {
+    width: 65%; }
+  .column.one-half {
+    width: 49%; }
+  .column:last-of-type {
+    margin-right: 0; }
+  @media (max-width: 800px) {
+    .column {
+      width: 100% !important;
+      margin-right: 0; } }
 
 * {
   box-sizing: border-box; }
@@ -41,9 +51,8 @@ a {
   -webkit-transition: 333ms all ease-in-out;
           transition: 333ms all ease-in-out;
   color: darkslategrey; }
-
-a:hover {
-  color: #FB8B6F; }
+  a:hover {
+    color: #FB8B6F; }
 
 /*Header*/
 header {
@@ -56,30 +65,45 @@ header {
   header nav {
     float: right;
     text-align: right; }
-    header nav a {
-      margin-right: 20px;
-      font-size: 20px;
-      color: #444;
-      text-decoration: none; }
-      header nav a:last-of-type {
-        margin: 0; }
-      header nav a:hover {
-        text-decoration: none; }
-
-.logo {
-  float: left;
-  width: 65px; }
 
 nav {
   margin-top: 21px; }
+  nav a {
+    margin-right: 20px;
+    font-size: 20px;
+    color: #444;
+    text-decoration: none; }
+    nav a:last-of-type {
+      margin: 0; }
+    nav a:hover {
+      text-decoration: none; }
+
+@media (max-width: 800px) {
+  text-align: center;
+  nav {
+    float: none;
+    text-align: center; } }
+.logo {
+  float: left;
+  width: 65px; }
+  @media (max-width: 800px) {
+    .logo {
+      float: none;
+      width: 80px; } }
 
 /*Footer*/
 footer {
   background: #135108;
   margin-top: 60px;
   padding: 5px 0;
-  font-size: 11px;
+  font-size: 20px;
   text-align: center; }
+  footer nav {
+    text-align: center; }
+    footer nav a {
+      font-size: 20px;
+      color: #444;
+      text-decoration: none; }
 
 /*Hero*/
 .hero {
@@ -98,16 +122,9 @@ footer {
 
 /*Responsive*/
 @media (max-width: 500px) {
-  header {
-    text-align: center; }
-
   .logo {
     float: none;
     width: 80px; }
-
-  header nav {
-    float: none;
-    text-align: center; }
 
   .column {
     width: 100% !important;

@@ -24,7 +24,7 @@ $pageID = strtolower($pageTitle);
 <body id="<?php echo $pageID; ?>">
 
     <header>
-        <div class="row clearfix">
+        <div class="row">
 
             <!-- Our Logo -->
             <a href="index.html">

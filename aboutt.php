@@ -8,7 +8,7 @@
 
 <body id="<?php echo $pageID; ?>">
     
-    <div class="row clearfix">
+    <div class="row">
     
         <!-- Content Area that is a two third column -->
 <div class="column two-third">

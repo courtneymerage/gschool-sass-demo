@@ -4,21 +4,33 @@
     width: 90%;
     max-width: 800px;
     margin: 0 auto 20px;
+    @include clearfix;
+    
+    @include breakpoint($bigscreen) {
+        max-width: 1500px;
+    }
 }
+
 
 .column {
     float: left;
-    margin-right: 2%
-}
+    margin-right: 2%;
 
-.column.two-third {
+
+&.two-third {
     width: 65%;
 }
 
-.column.one-half {
+&.one-half {
     width: 49%;
 }
 
-.column:last-of-type {
+&:last-of-type {
     margin-right: 0;
+}
+
+@include breakpoint ($tablet) {
+    width: 100% !important;
+    margin-right: 0;
+}
 }
